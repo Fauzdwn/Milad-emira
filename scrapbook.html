@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e9dfcc">
+<title>Happy Birthday ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrap/style.css">
+</head>
+<body>
+<div class="paper-bg"></div>
+<main class="scene">
+  <section class="album" id="album" aria-label="Scrapbook ulang tahun">
+    <div class="shadow"></div>
+
+    <!-- Closed front cover -->
+    <button class="closed-book" id="closedBook" aria-label="Buka scrapbook">
+      <span class="cover-photo-a cover-decoration"></span>
+      <span class="cover-photo-b cover-decoration"></span>
+      <span class="cover-tape"></span>
+      <span class="cover-main">memory<br>book</span>
+      <span class="cover-sub">happy birthday ♡</span>
+      <span class="nailong-sticker" aria-label="Karakter dinosaurus kuning lucu" role="img">
+        <svg viewBox="0 0 140 150" aria-hidden="true">
+          <ellipse cx="73" cy="133" rx="42" ry="8" fill="#3e29251f"/>
+          <path d="M36 89 Q17 81 22 61 Q28 47 43 58 L52 38 L65 48 L79 29 L91 49 Q113 48 120 69 Q126 91 109 108 L107 126 Q96 137 81 127 L64 127 Q49 139 38 126Z" fill="#ffd65c" stroke="#9b703b" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M46 88 Q45 70 61 66 Q81 60 99 75 Q108 91 93 105 Q76 117 56 104Z" fill="#fff0b0"/>
+          <ellipse cx="56" cy="75" rx="7" ry="10" fill="#fff"/><ellipse cx="86" cy="73" rx="7" ry="10" fill="#fff"/>
+          <ellipse cx="58" cy="77" rx="3.5" ry="5" fill="#45332c"/><ellipse cx="87" cy="75" rx="3.5" ry="5" fill="#45332c"/>
+          <path d="M66 91 Q73 99 81 90" fill="none" stroke="#8d5544" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="43" cy="88" r="6" fill="#f59b9b" opacity=".8"/><circle cx="99" cy="87" r="6" fill="#f59b9b" opacity=".8"/>
+          <path d="M36 106 Q24 112 32 123 Q43 130 53 119 M96 111 Q110 116 107 127 Q97 134 89 123" fill="#ffd65c" stroke="#9b703b" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 40 Q22 31 30 37 M112 29 Q121 25 125 35" fill="none" stroke="#f4c35a" stroke-width="4" stroke-linecap="round"/>
+          <path d="M110 48 C110 39 122 39 122 48 C122 55 110 62 110 62 C110 62 98 55 98 48 C98 39 110 39 110 48Z" fill="#e98c9b"/>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Open book -->
+    <div class="open-book" id="openBook" aria-hidden="true">
+      <div class="book-base">
+        <div class="page-stack left-stack" id="leftStack"></div>
+        <div class="page-stack right-stack" id="rightStack"></div>
+
+        <div class="spread left-page">
+          <div class="paper texture" id="leftContent"></div>
+        </div>
+        <div class="spread right-page">
+          <div class="paper texture" id="rightContent"></div>
+        </div>
+
+        <!-- sheets are the actual turning leaves -->
+        <div class="turn-sheet" id="turnSheet">
+          <div class="sheet-face front texture" id="sheetFront"></div>
+          <div class="sheet-face back texture" id="sheetBack"></div>
+        </div>
+
+        <div class="spine"></div>
+      </div>
+    </div>
+
+    <div class="gesture" id="gesture">geser untuk membalik halaman</div>
+  </section>
+</main>
+<script src="scrap/script.js"></script>
+</body>
+</html>

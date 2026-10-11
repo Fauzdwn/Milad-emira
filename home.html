@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>For You ❤</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* Hilangkan kotak biru pas di-tap di HP */
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Tombol Love */
+        .heart-btn {
+            font-size: 6rem;
+            color: #ff4d6d;
+            user-select: none;
+            outline: none;
+            border: none;
+            filter: drop-shadow(0 0 15px #ff4d6d);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            animation: pulse 1.5s infinite ease-in-out;
+            background: none;
+        }
+
+        .container:hover .heart-btn {
+            transform: scale(1.25);
+            filter: drop-shadow(0 0 30px #ff758f);
+        }
+
+        .container:active .heart-btn {
+            transform: scale(0.95);
+        }
+
+        /* Teks di bawah Love */
+        .text-hint {
+            margin-top: 15px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            user-select: none;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 15px #ff4d6d);
+            }
+            50% {
+                transform: scale(1.15);
+                filter: drop-shadow(0 0 25px #ff758f);
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 15px #ff4d6d);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container Love & Teks -->
+    <a href="flower.html" class="container" id="loveLink" title="Klik aku!">
+        <div class="heart-btn">❤</div>
+        <div class="text-hint">Klik love nya</div>
+    </a>
+
+    <script>
+        const loveLink = document.getElementById('loveLink');
+
+        loveLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Tahan pindah halaman sebentar
+            
+            // Putar musik di player.html agar tidak berhenti saat isi iframe berganti.
+            if (window.parent && typeof window.parent.playBackgroundMusic === 'function') {
+                window.parent.playBackgroundMusic();
+            }
+
+            // Pindah halaman setelah jeda singkat
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>

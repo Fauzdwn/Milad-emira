@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>For You ❤</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #000; }
+    #pageFrame { display: block; width: 100%; height: 100%; border: 0; }
+  </style>
+</head>
+<body>
+  <!-- Audio stays here while only the page inside the iframe changes. -->
+  <audio id="backgroundMusic" src="public/music.mp3" preload="auto"></audio>
+  <iframe id="pageFrame" src="home.html" title="Birthday scrapbook" allow="autoplay"></iframe>
+  <script>
+    function playBackgroundMusic() {
+      const audio = document.getElementById('backgroundMusic');
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().catch(error => console.log('Musik belum bisa diputar:', error));
+      }
+    }
+  </script>
+</body>
+</html>
